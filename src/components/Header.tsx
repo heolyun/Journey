@@ -1,9 +1,10 @@
 import { Github, Mail } from 'lucide-react';
 
 const navItems = [
-  { label: 'Featured', href: '#featured' },
-  { label: 'About', href: '#about' },
-  { label: 'Journey', href: '#journey' },
+  { label: 'About Me', href: '#' },
+  { label: 'Featured Projects', href: '#featured' },
+  { label: 'Growth Journey', href: '#journey' },
+  { label: 'Future Roadmap', href: '#roadmap' },
 ];
 
 export function Header() {

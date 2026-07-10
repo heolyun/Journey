@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
+import type { ReactNode } from 'react';
 import { ArrowRight, ChevronDown } from 'lucide-react';
 import { journeyGroups, journeyItems, type JourneyItem } from '../data/journey';
 
@@ -18,7 +19,7 @@ function StoryBlock({
   children,
 }: {
   title: string;
-  children: React.ReactNode;
+  children: ReactNode;
 }) {
   return (
     <section>
@@ -91,48 +92,61 @@ export function GrowthJourney() {
                   </h3>
                   <div className="relative space-y-2 pl-5">
                     <div className="absolute bottom-3 left-[7px] top-3 w-px bg-white/12" />
-                    {group.items.map((item) => {
+                    {group.items.map((item, itemIndex) => {
                       const isActive = item.id === active.id;
                       return (
-                        <button
-                          aria-current={isActive ? 'step' : undefined}
-                          className={[
-                            'focus-ring group relative flex w-full items-center justify-between gap-3 rounded-lg border px-3 py-3 text-left transition',
-                            isActive
-                              ? 'border-mint/50 bg-mint/10 text-white'
-                              : 'border-transparent bg-transparent text-zinc-400 hover:border-white/10 hover:bg-white/[0.035] hover:text-white',
-                          ].join(' ')}
-                          id={`project-${item.id}`}
-                          key={item.id}
-                          onClick={() => selectItem(item.id)}
-                          type="button"
-                        >
-                          <span
+                        <div key={item.id}>
+                          <button
+                            aria-current={isActive ? 'step' : undefined}
                             className={[
-                              'absolute -left-[20px] top-1/2 h-3 w-3 -translate-y-1/2 rounded-full border bg-ink',
+                              'focus-ring group relative flex w-full items-start justify-between gap-3 rounded-lg border px-3 py-3 text-left transition',
                               isActive
-                                ? 'border-mint shadow-[0_0_0_4px_rgba(157,255,203,0.12)]'
-                                : 'border-white/22',
+                                ? 'border-mint/50 bg-mint/10 text-white'
+                                : 'border-transparent bg-transparent text-zinc-400 hover:border-white/10 hover:bg-white/[0.035] hover:text-white',
                             ].join(' ')}
-                          />
-                          <span>
-                            <span className="block text-sm font-semibold">{item.name}</span>
-                            <span className="mt-1 block text-xs text-zinc-500">
-                              {item.status}
+                            id={`project-${item.id}`}
+                            onClick={() => selectItem(item.id)}
+                            type="button"
+                          >
+                            <span
+                              className={[
+                                'absolute -left-[20px] top-5 h-3 w-3 rounded-full border bg-ink',
+                                isActive
+                                  ? 'border-mint shadow-[0_0_0_4px_rgba(157,255,203,0.12)]'
+                                  : 'border-white/22',
+                              ].join(' ')}
+                            />
+                            <span className="min-w-0">
+                              <span className="block text-sm font-semibold">{item.name}</span>
+                              <span className="mt-1 block text-xs leading-5 text-zinc-500">
+                                {item.period}
+                              </span>
+                              <span className="mt-2 block text-xs leading-5 text-zinc-400">
+                                {item.summary}
+                              </span>
+                              <span className="mt-2 inline-flex text-[11px] font-semibold uppercase tracking-[0.12em] text-mint/80">
+                                ↓ {item.growthLabel}
+                              </span>
                             </span>
-                          </span>
-                          <span
-                            className={[
-                              'h-2.5 w-2.5 rounded-full',
-                              item.status === 'Completed'
-                                ? 'bg-mint'
-                                : item.status === 'In Progress'
-                                  ? 'bg-amber'
-                                  : 'bg-cyan',
-                            ].join(' ')}
-                            title={item.status}
-                          />
-                        </button>
+                            <span
+                              className={[
+                                'mt-1 h-2.5 w-2.5 shrink-0 rounded-full',
+                                item.status === 'Completed'
+                                  ? 'bg-mint'
+                                  : item.status === 'In Progress'
+                                    ? 'bg-amber'
+                                    : 'bg-cyan',
+                              ].join(' ')}
+                              title={item.status}
+                            />
+                          </button>
+                          {itemIndex < group.items.length - 1 ? (
+                            <div className="ml-3 flex items-center gap-2 py-2 text-[11px] font-semibold uppercase tracking-[0.12em] text-zinc-600">
+                              <span className="h-px w-5 bg-white/10" />
+                              <span>{item.growthLabel}</span>
+                            </div>
+                          ) : null}
+                        </div>
                       );
                     })}
                   </div>
@@ -154,6 +168,10 @@ export function GrowthJourney() {
                 <h3 className="text-4xl font-semibold leading-tight text-white">
                   {active.name}
                 </h3>
+                <p className="mt-3 text-sm font-medium text-zinc-500">
+                  {active.period}
+                  {active.repositoryName ? ` · Repository: ${active.repositoryName}` : ''}
+                </p>
                 <dl className="mt-6 grid gap-5">
                   <div>
                     <dt className="text-sm font-semibold text-zinc-500">담당 역할</dt>

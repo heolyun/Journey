@@ -1,4 +1,3 @@
-import { AboutMe } from './components/AboutMe';
 import { FeaturedProjects } from './components/FeaturedProjects';
 import { FutureRoadmap } from './components/FutureRoadmap';
 import { GrowthJourney } from './components/GrowthJourney';
@@ -12,7 +11,6 @@ export default function App() {
       <main>
         <Hero />
         <FeaturedProjects />
-        <AboutMe />
         <GrowthJourney />
         <FutureRoadmap />
       </main>

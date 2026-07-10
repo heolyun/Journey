@@ -8,7 +8,6 @@ import {
   Sprout,
   Stethoscope,
   type LucideIcon,
-  Users,
 } from 'lucide-react';
 
 export type JourneyStatus = 'Completed' | 'In Progress' | 'Planned';
@@ -23,7 +22,11 @@ export type TroubleShootingItem = {
 export type JourneyItem = {
   id: string;
   name: string;
+  repositoryName?: string;
   phase: string;
+  period: string;
+  summary: string;
+  growthLabel: string;
   projectType: '팀 프로젝트' | '개인 프로젝트';
   status: JourneyStatus;
   role: string;
@@ -53,6 +56,9 @@ export const journeyGroups: JourneyGroup[] = [
         id: 'doctorlink',
         name: 'DoctorLink',
         phase: 'Web Development',
+        period: '2025.12.10 → 2025.12.24',
+        summary: '화면과 API 연결을 익힌 첫 서비스 구현',
+        growthLabel: 'Web Development',
         projectType: '팀 프로젝트',
         status: 'Completed',
         role: '프론트엔드 및 서비스 기능 구현',
@@ -78,7 +84,11 @@ export const journeyGroups: JourneyGroup[] = [
       {
         id: 'trip',
         name: '#Trip',
+        repositoryName: 'hifive',
         phase: 'Web Development',
+        period: '2026.02.09 → 2026.03.03',
+        summary: '인증과 보안 흐름을 서버 관점에서 구현',
+        growthLabel: 'React Experience',
         projectType: '팀 프로젝트',
         status: 'Completed',
         role: '인증 기능 및 백엔드 구현',
@@ -105,6 +115,9 @@ export const journeyGroups: JourneyGroup[] = [
         id: 'oneulfarm',
         name: '오늘Farm',
         phase: 'Web Development',
+        period: '2026.03.09 → 2026.04.03',
+        summary: '외부 API와 여러 기능을 하나의 서비스로 통합',
+        growthLabel: 'Team Leader',
         projectType: '팀 프로젝트',
         status: 'Completed',
         role: '팀장 및 기능 개발',
@@ -136,6 +149,9 @@ export const journeyGroups: JourneyGroup[] = [
         id: 'teamrullet',
         name: '팀 밸런스 뽑기',
         phase: 'First Deployment',
+        period: '2026.04.14 · One Day Project',
+        summary: '개인 프로젝트를 처음 외부에 배포',
+        growthLabel: 'First Deployment',
         projectType: '개인 프로젝트',
         status: 'Completed',
         role: '기획, 구현, 배포',
@@ -161,6 +177,9 @@ export const journeyGroups: JourneyGroup[] = [
         id: 'chambti',
         name: 'CHAMBTI',
         phase: 'First Deployment',
+        period: '2026.04.15 · One Day Project',
+        summary: 'Netlify 배포 흐름을 반복하며 완성도 개선',
+        growthLabel: 'Netlify',
         projectType: '개인 프로젝트',
         status: 'Completed',
         role: '기획, 개발, 배포',
@@ -185,8 +204,11 @@ export const journeyGroups: JourneyGroup[] = [
     items: [
       {
         id: 'csas',
-        name: '균열분석 AI 웹앱',
+        name: 'CSAS',
         phase: 'AI Service Experience',
+        period: '2026.05 → 2026.06',
+        summary: 'AI 분석 결과를 웹 서비스 화면에 연결',
+        growthLabel: 'AI Service',
         projectType: '팀 프로젝트',
         status: 'Completed',
         role: '프론트엔드',
@@ -218,6 +240,9 @@ export const journeyGroups: JourneyGroup[] = [
         id: 'burinake',
         name: 'Burinake',
         phase: 'Cloud Infrastructure',
+        period: '2026.06 → 2026.07.13',
+        summary: 'Azure 기반 컨테이너 운영과 AI 인프라 구축',
+        growthLabel: 'Cloud Infrastructure',
         projectType: '팀 프로젝트',
         status: 'Completed',
         role: 'Cloud Infrastructure, DevOps, AI Infrastructure',
@@ -288,6 +313,9 @@ export const journeyGroups: JourneyGroup[] = [
         id: 'antiadhd',
         name: 'AntiADHD',
         phase: 'Container Orchestration',
+        period: '2026.07 → Present',
+        summary: '온프레미스 Kubernetes 운영 자동화 학습',
+        growthLabel: 'Container Orchestration',
         projectType: '개인 프로젝트',
         status: 'In Progress',
         role: '온프레미스 Kubernetes 운영 자동화 학습',
@@ -324,8 +352,11 @@ export const journeyGroups: JourneyGroup[] = [
     items: [
       {
         id: 'aws-project',
-        name: 'AWS 개인 프로젝트',
+        name: 'AWS Infrastructure Project',
         phase: 'Multi Cloud',
+        period: 'Coming Soon',
+        summary: 'Azure 경험을 AWS 인프라 설계로 확장 예정',
+        growthLabel: 'Multi Cloud',
         projectType: '개인 프로젝트',
         status: 'Planned',
         role: 'AWS 기반 인프라 설계 예정',
@@ -360,3 +391,48 @@ export const journeyGroups: JourneyGroup[] = [
 ];
 
 export const journeyItems = journeyGroups.flatMap((group) => group.items);
+
+export type RoadmapItem = {
+  label: string;
+  title: string;
+  description: string;
+};
+
+export const futureRoadmap: RoadmapItem[] = [
+  {
+    label: 'Current',
+    title: 'Operating Containerized Services',
+    description:
+      '컨테이너화된 서비스를 직접 실행하고 운영 흐름을 다듬는 단계입니다.',
+  },
+  {
+    label: 'Next',
+    title: 'Building Production-grade AWS Infrastructure',
+    description:
+      'VPC, ALB, RDS, ECR, ECS/EKS, CloudWatch를 조합해 운영 가능한 AWS 구조를 설계합니다.',
+  },
+  {
+    label: 'Future',
+    title: 'Infrastructure as Code',
+    description:
+      '반복 가능한 인프라 구성을 코드로 관리하며 환경 재현성을 높입니다.',
+  },
+  {
+    label: 'Future',
+    title: 'Observability',
+    description:
+      '로그, 메트릭, 알림을 통해 장애를 더 빠르게 발견하고 설명할 수 있는 구조를 만듭니다.',
+  },
+  {
+    label: 'Future',
+    title: 'Platform Engineering',
+    description:
+      '개발자가 안정적으로 배포하고 운영할 수 있는 내부 플랫폼 관점으로 확장합니다.',
+  },
+  {
+    label: 'Future',
+    title: 'Reliable Cloud Systems',
+    description:
+      '확장성과 복구 가능성을 고려한 신뢰도 높은 클라우드 시스템을 목표로 합니다.',
+  },
+];

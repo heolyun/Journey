@@ -69,15 +69,3 @@ export const featuredProjects: FeaturedProject[] = [
     icon: Cloud,
   },
 ];
-
-export const aboutCopy = [
-  '안녕하세요.',
-  '프로젝트를 진행하며 기능 구현에서 서비스 운영으로 관심을 확장했습니다.',
-  'Frontend부터 Cloud Infrastructure까지 서비스 전체 흐름을 경험했습니다.',
-];
-
-export const roadmapItems = [
-  'Burinake 상세 페이지에 아키텍처와 장애 대응 기록 추가',
-  'AntiADHD 진행 로그를 Kubernetes 운영 일지로 정리',
-  'AWS 프로젝트에서 Azure와 EKS 운영 관점 비교',
-];
