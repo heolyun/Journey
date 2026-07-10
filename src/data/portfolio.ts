@@ -16,8 +16,7 @@ export type FeaturedProject = {
   title: string;
   status: 'Completed' | 'In Progress' | 'Planned';
   spotlight?: boolean;
-  role: string;
-  story: string;
+  category: string;
   stack: string[];
   icon: LucideIcon;
 };
@@ -33,22 +32,40 @@ export type JourneyStep = {
   icon: LucideIcon;
 };
 
+export const heroProfile = {
+  name: 'HP DD',
+  role: 'Cloud Infrastructure Engineer',
+  intro: ['서비스 전체를 이해하며', '운영 환경을 설계하는 엔지니어'],
+  stack: 'Frontend · Backend · Cloud · DevOps',
+  actions: [
+    {
+      label: 'GitHub',
+      href: 'https://github.com/heolyun',
+    },
+    {
+      label: 'Resume',
+      href: '#',
+    },
+    {
+      label: 'Email',
+      href: 'mailto:hello@example.com',
+    },
+  ],
+};
+
 export const featuredProjects: FeaturedProject[] = [
   {
     id: 'burinake',
     title: 'Burinake',
     status: 'Completed',
     spotlight: true,
-    role: 'AI 기능 구현에서 배포, 스토리지, 자동화 파이프라인까지 연결',
-    story:
-      '서비스가 실제로 운영되려면 모델 호출, 파일 저장, 서버 배포, 장애 대응이 하나의 흐름으로 맞물려야 한다는 감각을 만든 프로젝트입니다.',
+    category: 'Cloud Infrastructure',
     stack: [
       'Azure VM',
       'AKS',
       'Docker',
-      'GitHub Actions',
+      'CI/CD',
       'Azure OpenAI',
-      'Blob Storage',
     ],
     icon: ShieldCheck,
   },
@@ -56,9 +73,7 @@ export const featuredProjects: FeaturedProject[] = [
     id: 'antiadhd',
     title: 'AntiADHD',
     status: 'In Progress',
-    role: 'Linux 서버 위에서 Helm과 모니터링을 붙이며 운영 관점을 확장',
-    story:
-      '클라우드가 감춰주는 계층을 직접 만지며 네트워크, 노드, 배포 단위의 책임을 이해하는 중입니다.',
+    category: 'Kubernetes',
     stack: ['Kubernetes', 'On-premise', 'Linux', 'Helm', 'Monitoring'],
     icon: Boxes,
   },
@@ -66,12 +81,16 @@ export const featuredProjects: FeaturedProject[] = [
     id: 'aws-project',
     title: 'AWS Project',
     status: 'Planned',
-    role: 'Azure와 Kubernetes 경험을 AWS 운영 모델로 옮겨 비교',
-    story:
-      'EC2에서 EKS까지 이어지는 기본 인프라를 설계하며 클라우드 선택지가 만드는 차이를 정리할 예정입니다.',
+    category: 'Cloud Architecture',
     stack: ['EC2', 'VPC', 'IAM', 'EKS', 'CloudWatch'],
     icon: Cloud,
   },
+];
+
+export const aboutCopy = [
+  '안녕하세요.',
+  '프로젝트를 진행하며 기능 구현에서 서비스 운영으로 관심을 확장했습니다.',
+  'Frontend부터 Cloud Infrastructure까지 서비스 전체 흐름을 경험했습니다.',
 ];
 
 export const journeySteps: JourneyStep[] = [
