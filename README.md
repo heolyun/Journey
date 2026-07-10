@@ -35,9 +35,6 @@ public/
 - Featured Projects
 - About Me
 - Growth Journey
-- All Projects
-- Project Detail anchors
-- Trouble Shooting
 - Future Roadmap
 
-Burinake를 가장 크게 강조하고, Growth Journey는 타임라인 클릭 시 오른쪽 내용만 변경됩니다.
+Burinake를 가장 크게 강조하고, Growth Journey는 프로젝트와 트러블슈팅을 하나의 성장 타임라인으로 통합합니다.
