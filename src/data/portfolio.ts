@@ -31,6 +31,10 @@ export const heroProfile = {
       href: '/resume/heo-ryun-resume.pdf',
     },
     {
+      label: '자기소개서',
+      href: '/resume/heo-ryun-cover-letter.pdf',
+    },
+    {
       label: 'Email',
       href: 'mailto:hl620@naver.com',
     },
