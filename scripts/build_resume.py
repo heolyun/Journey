@@ -189,8 +189,18 @@ def page_one(c):
     c.setFillColor(MUTED)
     c.setFont("Malgun", 8.5)
     c.drawString(M, y - 52, "010-4288-8707  ·  hl620@naver.com  ·  충남 천안시 서북구")
-    c.drawString(M, y - 68, "github.com/heolyun")
-    c.linkURL("https://github.com/heolyun", (M, y - 72, M + 85, y - 58), relative=0)
+    portfolio_label = "Portfolio  journey-eta-two.vercel.app"
+    github_label = "GitHub  github.com/heolyun"
+    c.drawString(M, y - 68, portfolio_label)
+    portfolio_end = M + width(portfolio_label, "Malgun", 8.5)
+    c.linkURL("https://journey-eta-two.vercel.app", (M, y - 72, portfolio_end, y - 58), relative=0)
+    github_x = portfolio_end + 16
+    c.drawString(github_x, y - 68, github_label)
+    c.linkURL(
+        "https://github.com/heolyun",
+        (github_x, y - 72, github_x + width(github_label, "Malgun", 8.5), y - 58),
+        relative=0,
+    )
 
     y -= 98
     c.setFillColor(PALE_BLUE)
