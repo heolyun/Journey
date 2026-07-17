@@ -6,10 +6,12 @@ from reportlab.lib.units import mm
 from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.pdfgen import canvas
+from reportlab.lib.utils import ImageReader
 
 
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / "public" / "resume" / "heo-ryun-resume.pdf"
+PROFILE_IMAGE = ROOT / "public" / "resume" / "assets" / "heo-ryun-profile.png"
 W, H = A4
 M = 18 * mm
 CW = W - 2 * M
@@ -159,6 +161,24 @@ def small_project(c, x, y, w, title, desc, tags):
 
 def page_one(c):
     y = H - 22 * mm
+    photo_w = 28 * mm
+    photo_h = 36 * mm
+    photo_x = W - M - photo_w
+    photo_y = H - 18 * mm - photo_h
+    c.setFillColor(WHITE)
+    c.setStrokeColor(LINE)
+    c.setLineWidth(0.8)
+    c.roundRect(photo_x - 3, photo_y - 3, photo_w + 6, photo_h + 6, 7, fill=1, stroke=1)
+    c.drawImage(
+        ImageReader(str(PROFILE_IMAGE)),
+        photo_x,
+        photo_y,
+        width=photo_w,
+        height=photo_h,
+        preserveAspectRatio=True,
+        anchor="c",
+        mask="auto",
+    )
     c.setFillColor(INK)
     c.setFont("MalgunBold", 26)
     c.drawString(M, y, "Heo Ryun")
@@ -169,10 +189,10 @@ def page_one(c):
     c.setFillColor(MUTED)
     c.setFont("Malgun", 8.5)
     c.drawString(M, y - 52, "010-4288-8707  ·  hl620@naver.com  ·  충남 천안시 서북구")
-    c.drawRightString(W - M, y - 52, "github.com/heolyun")
-    c.linkURL("https://github.com/heolyun", (W - M - 85, y - 56, W - M, y - 42), relative=0)
+    c.drawString(M, y - 68, "github.com/heolyun")
+    c.linkURL("https://github.com/heolyun", (M, y - 72, M + 85, y - 58), relative=0)
 
-    y -= 76
+    y -= 98
     c.setFillColor(PALE_BLUE)
     c.roundRect(M, y - 83, CW, 83, 12, fill=1, stroke=0)
     c.setFillColor(BLUE)
