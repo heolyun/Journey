@@ -252,7 +252,7 @@ export const journeyGroups: JourneyGroup[] = [
       {
         id: 'burinake',
         image: '/images/projects/burinake.png',
-        liveUrl: 'https://burinake.20.249.106.231.nip.io',
+        liveUrl: 'https://burinake-demo.vercel.app',
         name: 'Burinake',
         phase: 'Cloud Infrastructure',
         period: '2026.06 → 2026.07.13',
