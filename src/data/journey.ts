@@ -217,6 +217,7 @@ export const journeyGroups: JourneyGroup[] = [
     items: [
       {
         id: 'csas',
+        image: '/images/projects/csas.png',
         name: 'CSAS',
         phase: 'AI Service Experience',
         period: '2026.05 → 2026.06',

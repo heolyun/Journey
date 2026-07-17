@@ -51,8 +51,10 @@ export function FeaturedProjects() {
                         </div>
                       </>
                     )}
-                    <div className="absolute inset-0 flex translate-y-4 flex-col justify-end bg-black/72 p-6 opacity-0 transition duration-300 group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:translate-y-0 group-focus-within:opacity-100">
-                      <p className="text-sm font-semibold text-mint">{project.category}</p>
+                    <div className="absolute inset-0 flex translate-y-4 flex-col justify-end bg-gradient-to-t from-black via-black/90 to-black/45 p-6 opacity-0 transition duration-300 group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:translate-y-0 group-focus-within:opacity-100">
+                      <p className="w-fit rounded-full border border-mint/60 bg-black/85 px-3 py-1.5 text-sm font-bold tracking-wide text-mint shadow-[0_0_18px_rgba(157,255,203,0.28)]">
+                        {project.category}
+                      </p>
                       <div className="mt-4 flex flex-wrap gap-2">
                         {project.stack.map((item) => (
                           <span className="chip border-white/14 bg-white/8 text-white" key={item}>
