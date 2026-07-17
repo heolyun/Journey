@@ -39,7 +39,7 @@ export function Header() {
           <a
             aria-label="Email"
             className="focus-ring grid h-9 w-9 place-items-center rounded-lg border border-white/10 bg-white/5 text-zinc-200 transition hover:border-cyan/40 hover:text-cyan"
-            href="mailto:hello@example.com"
+            href="mailto:hl620@naver.com"
             title="Email"
           >
             <Mail size={18} />

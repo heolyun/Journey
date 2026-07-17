@@ -17,7 +17,7 @@ export type FeaturedProject = {
 };
 
 export const heroProfile = {
-  name: 'HP DD',
+  name: 'Heo Ryun',
   role: 'Cloud Infrastructure Engineer',
   intro: ['서비스 전체를 이해하며', '운영 환경을 설계하는 엔지니어'],
   stack: 'Frontend · Backend · Cloud · DevOps',
@@ -32,7 +32,7 @@ export const heroProfile = {
     },
     {
       label: 'Email',
-      href: 'mailto:hello@example.com',
+      href: 'mailto:hl620@naver.com',
     },
   ],
 };
