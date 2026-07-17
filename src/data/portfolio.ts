@@ -1,8 +1,8 @@
 import {
-  Boxes,
-  Cloud,
+  BrainCircuit,
+  CloudCog,
+  Flame,
   type LucideIcon,
-  ShieldCheck,
 } from 'lucide-react';
 
 export type FeaturedProject = {
@@ -52,7 +52,7 @@ export const featuredProjects: FeaturedProject[] = [
       'Azure OpenAI',
     ],
     image: '/images/projects/burinake.png',
-    icon: ShieldCheck,
+    icon: Flame,
   },
   {
     id: 'antiadhd',
@@ -60,7 +60,7 @@ export const featuredProjects: FeaturedProject[] = [
     status: 'In Progress',
     category: 'Kubernetes',
     stack: ['Kubernetes', 'On-premise', 'Linux', 'Helm', 'Monitoring'],
-    icon: Boxes,
+    icon: BrainCircuit,
   },
   {
     id: 'aws-project',
@@ -68,6 +68,6 @@ export const featuredProjects: FeaturedProject[] = [
     status: 'Planned',
     category: 'Cloud Architecture',
     stack: ['EC2', 'VPC', 'IAM', 'EKS', 'CloudWatch'],
-    icon: Cloud,
+    icon: CloudCog,
   },
 ];
