@@ -28,7 +28,7 @@ export const heroProfile = {
     },
     {
       label: 'Resume',
-      href: '#',
+      href: '/resume/heo-ryun-resume.pdf',
     },
     {
       label: 'Email',

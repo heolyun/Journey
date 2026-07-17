@@ -40,6 +40,8 @@ export function Hero() {
                   className="focus-ring inline-flex h-11 items-center justify-center gap-2 rounded-lg border border-white/14 bg-white/[0.025] px-5 text-sm font-semibold text-white transition hover:border-white/28 hover:bg-white/[0.06]"
                   href={action.href}
                   key={action.label}
+                  rel={action.label === 'Resume' ? 'noreferrer' : undefined}
+                  target={action.label === 'Resume' ? '_blank' : undefined}
                 >
                   <Icon size={17} />
                   <span>{action.label}</span>
