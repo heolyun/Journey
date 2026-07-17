@@ -37,10 +37,20 @@ export function FeaturedProjects() {
                   </div>
 
                   <div className="relative min-h-0 flex-1 overflow-hidden rounded-lg border border-white/10 bg-[linear-gradient(135deg,rgba(255,255,255,0.08),rgba(255,255,255,0.025)),radial-gradient(circle_at_68%_30%,rgba(102,227,255,0.18),transparent_34%),radial-gradient(circle_at_26%_72%,rgba(157,255,203,0.12),transparent_30%)]">
-                    <div className="absolute inset-6 rounded-lg border border-dashed border-white/14" />
-                    <div className="absolute inset-0 grid place-items-center text-sm font-medium text-zinc-500">
-                      {project.spotlight ? 'Large Image Placeholder' : 'Image Placeholder'}
-                    </div>
+                    {project.image ? (
+                      <img
+                        alt={`${project.title} 대표 화면`}
+                        className="absolute inset-0 h-full w-full object-cover object-top"
+                        src={project.image}
+                      />
+                    ) : (
+                      <>
+                        <div className="absolute inset-6 rounded-lg border border-dashed border-white/14" />
+                        <div className="absolute inset-0 grid place-items-center text-sm font-medium text-zinc-500">
+                          {project.spotlight ? 'Large Image Placeholder' : 'Image Placeholder'}
+                        </div>
+                      </>
+                    )}
                     <div className="absolute inset-0 flex translate-y-4 flex-col justify-end bg-black/72 p-6 opacity-0 transition duration-300 group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:translate-y-0 group-focus-within:opacity-100">
                       <p className="text-sm font-semibold text-mint">{project.category}</p>
                       <div className="mt-4 flex flex-wrap gap-2">

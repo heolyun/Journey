@@ -40,6 +40,9 @@ export type JourneyItem = {
     description: string;
   };
   troubleshooting?: TroubleShootingItem[];
+  image?: string;
+  videoUrl?: string;
+  liveUrl?: string;
   icon: LucideIcon;
 };
 
@@ -54,6 +57,8 @@ export const journeyGroups: JourneyGroup[] = [
     items: [
       {
         id: 'doctorlink',
+        image: '/images/projects/doctorlink.png',
+        videoUrl: 'https://www.youtube.com/embed/qyc2cOj7X1Y',
         name: 'DoctorLink',
         phase: 'Web Development',
         period: '2025.12.10 → 2025.12.24',
@@ -83,6 +88,8 @@ export const journeyGroups: JourneyGroup[] = [
       },
       {
         id: 'trip',
+        image: '/images/projects/trip.png',
+        videoUrl: 'https://www.youtube.com/embed/67PwJ7UhVYI',
         name: '#Trip',
         repositoryName: 'hifive',
         phase: 'Web Development',
@@ -113,6 +120,8 @@ export const journeyGroups: JourneyGroup[] = [
       },
       {
         id: 'oneulfarm',
+        image: '/images/projects/oneulfarm.png',
+        videoUrl: 'https://www.youtube.com/embed/DqfVTOmsjP4',
         name: '오늘Farm',
         phase: 'Web Development',
         period: '2026.03.09 → 2026.04.03',
@@ -147,6 +156,8 @@ export const journeyGroups: JourneyGroup[] = [
     items: [
       {
         id: 'teamrullet',
+        image: '/images/projects/teamrullet.png',
+        liveUrl: 'https://teamrullet.netlify.app/',
         name: '팀 밸런스 뽑기',
         phase: 'First Deployment',
         period: '2026.04.14 · One Day Project',
@@ -175,6 +186,8 @@ export const journeyGroups: JourneyGroup[] = [
       },
       {
         id: 'chambti',
+        image: '/images/projects/chambti.png',
+        liveUrl: 'https://chambti.netlify.app/quiz',
         name: 'CHAMBTI',
         phase: 'First Deployment',
         period: '2026.04.15 · One Day Project',
@@ -238,6 +251,8 @@ export const journeyGroups: JourneyGroup[] = [
     items: [
       {
         id: 'burinake',
+        image: '/images/projects/burinake.png',
+        liveUrl: 'https://burinake.20.249.106.231.nip.io',
         name: 'Burinake',
         phase: 'Cloud Infrastructure',
         period: '2026.06 → 2026.07.13',

@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import type { ReactNode } from 'react';
-import { ArrowRight, ChevronDown } from 'lucide-react';
+import { ArrowRight, ArrowUpRight, ChevronDown, Play } from 'lucide-react';
 import { journeyGroups, journeyItems, type JourneyItem } from '../data/journey';
 
 const statusStyles = {
@@ -29,8 +29,36 @@ function StoryBlock({
   );
 }
 
-function MediaPlaceholder({ item }: { item: JourneyItem }) {
+function ProjectMedia({ item }: { item: JourneyItem }) {
   const Icon = item.icon;
+
+  if (item.videoUrl) {
+    return (
+      <div className="overflow-hidden rounded-lg border border-white/10 bg-black">
+        <iframe
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowFullScreen
+          className="aspect-video w-full"
+          src={item.videoUrl}
+          title={`${item.name} 시연 영상`}
+        />
+        <div className="flex items-center gap-2 border-t border-white/10 px-4 py-3 text-sm text-zinc-400">
+          <Play size={15} />
+          <span>프로젝트 시연 영상</span>
+        </div>
+      </div>
+    );
+  }
+
+  if (item.image) {
+    return (
+      <img
+        alt={`${item.name} 대표 화면`}
+        className="aspect-video w-full rounded-lg border border-white/10 bg-black object-cover object-top"
+        src={item.image}
+      />
+    );
+  }
 
   return (
     <div className="relative min-h-[220px] overflow-hidden rounded-lg border border-white/10 bg-[linear-gradient(135deg,rgba(255,255,255,0.08),rgba(255,255,255,0.025)),radial-gradient(circle_at_72%_28%,rgba(102,227,255,0.14),transparent_34%),radial-gradient(circle_at_24%_78%,rgba(157,255,203,0.1),transparent_30%)]">
@@ -192,7 +220,20 @@ export function GrowthJourney() {
                 </dl>
               </div>
 
-              <MediaPlaceholder item={active} />
+              <div>
+                <ProjectMedia item={active} />
+                {active.liveUrl ? (
+                  <a
+                    className="focus-ring mt-3 inline-flex items-center gap-2 rounded-lg border border-mint/30 bg-mint/10 px-4 py-2.5 text-sm font-semibold text-mint transition hover:border-mint/60 hover:bg-mint/15"
+                    href={active.liveUrl}
+                    rel="noreferrer"
+                    target="_blank"
+                  >
+                    <span>배포 사이트 방문</span>
+                    <ArrowUpRight size={15} />
+                  </a>
+                ) : null}
+              </div>
             </div>
 
             <div className="mt-8 border-t border-white/10 pt-8">

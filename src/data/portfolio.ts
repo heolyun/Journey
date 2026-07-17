@@ -12,6 +12,7 @@ export type FeaturedProject = {
   spotlight?: boolean;
   category: string;
   stack: string[];
+  image?: string;
   icon: LucideIcon;
 };
 
@@ -50,6 +51,7 @@ export const featuredProjects: FeaturedProject[] = [
       'CI/CD',
       'Azure OpenAI',
     ],
+    image: '/images/projects/burinake.png',
     icon: ShieldCheck,
   },
   {
