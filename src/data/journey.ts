@@ -58,7 +58,7 @@ export const journeyGroups: JourneyGroup[] = [
       {
         id: 'doctorlink',
         image: '/images/projects/doctorlink.png',
-        videoUrl: 'https://www.youtube.com/embed/qyc2cOj7X1Y',
+        videoUrl: 'https://www.youtube.com/embed/8UYZvMfpsVE',
         name: 'DoctorLink',
         phase: 'Web Development',
         period: '2025.12.10 → 2025.12.24',
@@ -89,7 +89,7 @@ export const journeyGroups: JourneyGroup[] = [
       {
         id: 'trip',
         image: '/images/projects/trip.png',
-        videoUrl: 'https://www.youtube.com/embed/67PwJ7UhVYI',
+        videoUrl: 'https://www.youtube.com/embed/xIeQLS1MjWY',
         name: '#Trip',
         repositoryName: 'hifive',
         phase: 'Web Development',
@@ -121,7 +121,7 @@ export const journeyGroups: JourneyGroup[] = [
       {
         id: 'oneulfarm',
         image: '/images/projects/oneulfarm.png',
-        videoUrl: 'https://www.youtube.com/embed/DqfVTOmsjP4',
+        videoUrl: 'https://www.youtube.com/embed/7_OIEbt_0JY',
         name: '오늘Farm',
         phase: 'Web Development',
         period: '2026.03.09 → 2026.04.03',
