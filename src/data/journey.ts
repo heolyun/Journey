@@ -255,6 +255,7 @@ export const journeyGroups: JourneyGroup[] = [
       {
         id: 'csas',
         image: '/images/projects/csas.png',
+        liveUrl: 'https://csas-demo.vercel.app',
         name: 'CSAS',
         phase: 'AI Service Experience',
         period: '2026.05 → 2026.06',
