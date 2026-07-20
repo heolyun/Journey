@@ -218,11 +218,11 @@ def page_one(c):
     y = skill_row(c, y, "인프라·운영", ["Azure", "AKS", "Kubernetes", "Docker", "GitHub Actions", "Linux"])
     y = skill_row(c, y, "웹 개발", ["Java", "Spring", "Spring Security", "React", "JavaScript", "REST API"])
     y = skill_row(c, y, "데이터·AI", ["Oracle", "PostgreSQL", "MyBatis", "Python", "AI API"])
-    y -= 7
+    y -= 18
 
     y = section(c, "주요 프로젝트", y)
     y = project_card(c, y, "Burinake", "클라우드 · DevOps · AI 인프라", "화재 감지와 신고 자동화 AI 서비스를 Azure에서 컨테이너 기반으로 배포·운영했습니다.", ["GitHub Actions에서 이미지를 빌드해 ACR로 배포하고, AKS가 이미지를 가져오도록 CI/CD를 분리했습니다.", "YOLO 모델을 Blob Storage와 initContainer로 분리해 이미지 비대화와 VM 디스크 부족 문제를 개선했습니다.", "프론트엔드·백엔드·PostgreSQL·YOLO·VLM을 AKS에 연결하고 Secret, ConfigMap, Ingress, HPA를 구성했습니다."], ["Azure", "AKS", "Docker", "CI/CD", "YOLO / VLM"], 158)
-    project_card(c, y, "CSAS", "프론트엔드", "AI 기반 건강 근육 분석 서비스의 모바일 촬영·업로드와 분석 결과 화면을 구현했습니다.", ["업로드 전 이미지 압축과 오류 안내로 고해상도 모바일 사진의 413 오류를 줄였습니다.", "근육 좌표·유형 필터, 원본/분석 비교와 원본 상세 모달을 개선했습니다."], ["React", "Vite", "Axios", "AI API"], 123)
+    project_card(c, y, "CSAS", "프론트엔드", "AI 기반 건물 균열 분석 서비스의 모바일 촬영·업로드와 분석 결과 화면을 구현했습니다.", ["업로드 전 이미지 압축과 오류 안내로 고해상도 모바일 사진의 413 오류를 줄였습니다.", "균열 좌표·유형 필터, 원본/분석 이미지 비교와 상세 모달을 개선했습니다."], ["React", "Vite", "Axios", "AI API"], 123)
     footer(c, 1)
 
 
