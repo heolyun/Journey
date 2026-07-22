@@ -38,11 +38,20 @@ export function FeaturedProjects() {
 
                   <div className="relative min-h-0 flex-1 overflow-hidden rounded-lg border border-white/10 bg-[linear-gradient(135deg,rgba(255,255,255,0.08),rgba(255,255,255,0.025)),radial-gradient(circle_at_68%_30%,rgba(102,227,255,0.18),transparent_34%),radial-gradient(circle_at_26%_72%,rgba(157,255,203,0.12),transparent_30%)]">
                     {project.image ? (
-                      <img
-                        alt={`${project.title} 대표 화면`}
-                        className="absolute inset-0 h-full w-full object-cover object-top"
-                        src={project.image}
-                      />
+                      <>
+                        <img
+                          alt=""
+                          aria-hidden="true"
+                          className="absolute inset-0 h-full w-full scale-110 object-cover opacity-35 blur-xl"
+                          src={project.image}
+                        />
+                        <div className="absolute inset-0 bg-black/20" />
+                        <img
+                          alt={`${project.title} 대표 화면`}
+                          className="absolute inset-0 h-full w-full object-contain object-center"
+                          src={project.image}
+                        />
+                      </>
                     ) : (
                       <>
                         <div className="absolute inset-6 rounded-lg border border-dashed border-white/14" />
