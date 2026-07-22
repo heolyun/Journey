@@ -62,8 +62,9 @@ export const featuredProjects: FeaturedProject[] = [
     id: 'antiadhd',
     title: 'AntiADHD',
     status: 'In Progress',
-    category: 'Kubernetes',
-    stack: ['Kubernetes', 'On-premise', 'Linux', 'Helm', 'Monitoring'],
+    category: 'AI Productivity · On-premise Kubernetes',
+    stack: ['React Native', 'Spring Boot', 'k3s', 'PostgreSQL', 'OpenAI'],
+    image: '/images/projects/antiadhd.png',
     icon: BrainCircuit,
   },
   {

@@ -45,6 +45,7 @@ export type JourneyItem = {
   liveUrl?: string;
   repositoryUrl?: string;
   architectureUrl?: string;
+  screenshots?: Array<{ src: string; alt: string }>;
   icon: LucideIcon;
 };
 
@@ -377,6 +378,7 @@ export const journeyGroups: JourneyGroup[] = [
     items: [
       {
         id: 'antiadhd',
+        image: '/images/projects/antiadhd.png',
         name: 'AntiADHD',
         phase: 'Container Orchestration',
         period: '2026.07 → Present',
@@ -417,6 +419,11 @@ export const journeyGroups: JourneyGroup[] = [
         liveUrl: 'https://journey-eta-two.vercel.app/#project-antiadhd',
         repositoryUrl: 'https://github.com/heolyun/AntiADHD',
         architectureUrl: 'https://github.com/heolyun/AntiADHD/blob/main/docs/architecture.md',
+        screenshots: [
+          { src: '/images/projects/antiadhd-report.png', alt: 'AntiADHD 실행 리포트 화면' },
+          { src: '/images/projects/antiadhd-ai-plan.png', alt: 'AntiADHD AI 시작 계획 입력 화면' },
+          { src: '/images/projects/antiadhd-schedule-detail.png', alt: 'AntiADHD 일정 상세 화면' },
+        ],
         troubleshooting: [
           {
             problem: '새 Backend Pod가 Flyway 단계에서 CrashLoop에 진입',

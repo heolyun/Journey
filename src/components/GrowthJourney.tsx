@@ -248,6 +248,25 @@ export function GrowthJourney() {
               </div>
             </div>
 
+            {active.screenshots?.length ? (
+              <section className="mt-8 border-t border-white/10 pt-8">
+                <div className="flex flex-wrap items-end justify-between gap-3">
+                  <div>
+                    <p className="text-xs font-semibold uppercase tracking-[0.14em] text-mint">Product Screens</p>
+                    <h4 className="mt-2 text-xl font-semibold text-white">실제 Android 앱 화면</h4>
+                  </div>
+                  <p className="text-sm text-zinc-500">Galaxy 기기에서 직접 실행·검증</p>
+                </div>
+                <div className="mt-5 grid grid-cols-2 gap-3 md:grid-cols-3">
+                  {active.screenshots.map((screenshot) => (
+                    <a className="group/screen overflow-hidden rounded-lg border border-white/10 bg-black transition hover:-translate-y-1 hover:border-mint/35" href={screenshot.src} key={screenshot.src} target="_blank">
+                      <img alt={screenshot.alt} className="aspect-[9/16] h-full w-full object-cover object-top transition duration-300 group-hover/screen:scale-[1.02]" loading="lazy" src={screenshot.src} />
+                    </a>
+                  ))}
+                </div>
+              </section>
+            ) : null}
+
             <div className="mt-8 border-t border-white/10 pt-8">
               <h4 className="text-xl font-semibold text-white">Journey Story</h4>
               <div className="mt-6 grid gap-7">
