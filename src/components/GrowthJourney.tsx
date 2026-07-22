@@ -233,6 +233,18 @@ export function GrowthJourney() {
                     <ArrowUpRight size={15} />
                   </a>
                 ) : null}
+                <div className="mt-3 flex flex-wrap gap-2">
+                  {active.repositoryUrl ? (
+                    <a className="focus-ring inline-flex items-center gap-2 rounded-lg border border-white/14 px-4 py-2.5 text-sm font-semibold text-white transition hover:border-white/30 hover:bg-white/[0.04]" href={active.repositoryUrl} rel="noreferrer" target="_blank">
+                      <span>GitHub</span><ArrowUpRight size={15} />
+                    </a>
+                  ) : null}
+                  {active.architectureUrl ? (
+                    <a className="focus-ring inline-flex items-center gap-2 rounded-lg border border-cyan/30 bg-cyan/10 px-4 py-2.5 text-sm font-semibold text-cyan transition hover:border-cyan/60" href={active.architectureUrl} rel="noreferrer" target="_blank">
+                      <span>Architecture</span><ArrowUpRight size={15} />
+                    </a>
+                  ) : null}
+                </div>
               </div>
             </div>
 

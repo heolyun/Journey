@@ -43,6 +43,8 @@ export type JourneyItem = {
   image?: string;
   videoUrl?: string;
   liveUrl?: string;
+  repositoryUrl?: string;
+  architectureUrl?: string;
   icon: LucideIcon;
 };
 
@@ -378,35 +380,57 @@ export const journeyGroups: JourneyGroup[] = [
         name: 'AntiADHD',
         phase: 'Container Orchestration',
         period: '2026.07 → Present',
-        summary: '온프레미스 Kubernetes 운영 자동화 학습',
+        summary: 'AI 생산성 앱을 온프레미스 k3s에서 직접 배포·관측·복구',
         growthLabel: 'Container Orchestration',
         projectType: '개인 프로젝트',
         status: 'In Progress',
-        role: '온프레미스 Kubernetes 운영 자동화 학습',
+        role: '백엔드·모바일 구현 및 온프레미스 Kubernetes 운영 설계',
         technologies: [
-          'Kubernetes 또는 k3s',
-          'Ingress',
-          'ConfigMap',
-          'Secret',
-          'Helm',
-          'Monitoring',
+          'React Native · Expo',
+          'Spring Boot · Security',
+          'PostgreSQL · Flyway',
+          'Docker · k3s · Kustomize',
+          'GitHub Actions · GHCR',
+          'Prometheus · Grafana',
+          'OpenAI API',
         ],
         work: [
-          '온프레미스 Linux 환경에서 Kubernetes 운영 구조 학습',
-          'Ingress, ConfigMap, Secret, Helm, Monitoring 구성 실험',
+          'AI 작업 분해, 음성 일정 입력, 타임 블록, 포커스 세션을 하나의 실행 흐름으로 구현',
+          'Spring Boot API와 AI Worker를 분리하고 PostgreSQL 스키마를 Flyway로 버전 관리',
+          'Ubuntu 홈 서버에 단일 노드 k3s를 구성하고 Ingress, Secret, PVC, 관측 계층을 운영',
+          'Backend 테스트, Android E2E, 보안 검사, GHCR 이미지 배포를 GitHub Actions로 자동화',
         ],
         limitation:
-          '관리형 Kubernetes에서 제공하던 편의 기능을 직접 구성하며 클러스터 운영의 기본기를 확인하고 있습니다.',
+          '관리형 클라우드가 대신하던 네트워크, 영속 볼륨, Secret, 관측과 복구를 직접 책임해야 했습니다.',
         problemSolving: [
-          '완료된 프로젝트가 아니므로 진행 중인 실험과 운영 자동화 학습 중심으로 정리하고 있습니다.',
+          '운영 DB의 레거시 외래 키 이름 차이로 Flyway 마이그레이션이 실패하자 직전 이미지로 롤백해 서비스를 먼저 복구했습니다.',
+          '운영 스키마 복제본에서 트랜잭션 dry-run을 수행하고 제약 조건 이름 대신 관계를 기준으로 탐색하도록 수정했습니다.',
+          'AI 요청을 별도 Worker Deployment로 분리해 일반 CRUD 응답 경로의 지연과 장애 영향을 줄였습니다.',
         ],
         learned:
-          '추상화된 클라우드 서비스 아래의 Linux, 네트워크, 배포 단위를 직접 이해하는 중입니다.',
+          'Kubernetes 리소스를 만드는 것보다 관측 가능성, 데이터 백업, 마이그레이션 검증과 롤백 가능성이 운영의 핵심이라는 점을 배웠습니다.',
         nextJourney: {
           title: 'Multi Cloud',
           description:
             'Azure에 한정되지 않고 AWS에서도 인프라를 직접 설계하고 싶습니다.',
         },
+        liveUrl: 'https://journey-eta-two.vercel.app/#project-antiadhd',
+        repositoryUrl: 'https://github.com/heolyun/AntiADHD',
+        architectureUrl: 'https://github.com/heolyun/AntiADHD/blob/main/docs/architecture.md',
+        troubleshooting: [
+          {
+            problem: '새 Backend Pod가 Flyway 단계에서 CrashLoop에 진입',
+            cause: '개발 DB와 운영 레거시 DB의 외래 키 제약 조건 이름이 달랐습니다.',
+            solution: '직전 SHA 이미지로 롤백한 뒤 운영 스키마 기반 dry-run을 수행하고 관계 기반 제약 조건 탐색으로 수정했습니다.',
+            lesson: 'DB 마이그레이션은 신규 스키마뿐 아니라 실제 운영 이력을 가진 스키마에서 검증해야 합니다.',
+          },
+          {
+            problem: 'AI 요청 중 일반 API까지 지연될 가능성',
+            cause: 'LLM 응답 시간과 실패율은 일반 CRUD 요청보다 변동 폭이 큽니다.',
+            solution: 'AI 처리를 별도 Worker Deployment로 분리하고 독립적으로 상태를 관측하도록 구성했습니다.',
+            lesson: '외부 AI 의존성은 핵심 요청 경로와 장애 영역을 분리해야 합니다.',
+          },
+        ],
         icon: Boxes,
       },
     ],
