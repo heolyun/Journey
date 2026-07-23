@@ -395,12 +395,14 @@ export const journeyGroups: JourneyGroup[] = [
           'GitHub Actions · GHCR',
           'Prometheus · Grafana',
           'OpenAI API',
+          'AsyncStorage · NetInfo',
         ],
         work: [
           'AI 작업 분해, 음성 일정 입력, 타임 블록, 포커스 세션을 하나의 실행 흐름으로 구현',
           'Spring Boot API와 AI Worker를 분리하고 PostgreSQL 스키마를 Flyway로 버전 관리',
           'Ubuntu 홈 서버에 단일 노드 k3s를 구성하고 Ingress, Secret, PVC, 관측 계층을 운영',
           'Backend 테스트, Android E2E, 보안 검사, GHCR 이미지 배포를 GitHub Actions로 자동화',
+          '홈 서버가 꺼져도 일정을 사용할 수 있도록 오프라인 저장소와 재연결 mutation queue를 구현',
         ],
         limitation:
           '관리형 클라우드가 대신하던 네트워크, 영속 볼륨, Secret, 관측과 복구를 직접 책임해야 했습니다.',
@@ -408,9 +410,10 @@ export const journeyGroups: JourneyGroup[] = [
           '운영 DB의 레거시 외래 키 이름 차이로 Flyway 마이그레이션이 실패하자 직전 이미지로 롤백해 서비스를 먼저 복구했습니다.',
           '운영 스키마 복제본에서 트랜잭션 dry-run을 수행하고 제약 조건 이름 대신 관계를 기준으로 탐색하도록 수정했습니다.',
           'AI 요청을 별도 Worker Deployment로 분리해 일반 CRUD 응답 경로의 지연과 장애 영향을 줄였습니다.',
+          '서버 연결 실패 후 circuit breaker로 반복 타임아웃을 막고, 재연결 시 큐를 순차 재생하도록 설계했습니다.',
         ],
         learned:
-          'Kubernetes 리소스를 만드는 것보다 관측 가능성, 데이터 백업, 마이그레이션 검증과 롤백 가능성이 운영의 핵심이라는 점을 배웠습니다.',
+          'Kubernetes 리소스를 만드는 것뿐 아니라 오프라인 지속성, 충돌 처리, 관측 가능성, 데이터 백업과 롤백 가능성이 실제 서비스 운영의 핵심이라는 점을 배웠습니다.',
         nextJourney: {
           title: 'Multi Cloud',
           description:
