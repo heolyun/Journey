@@ -419,7 +419,7 @@ export const journeyGroups: JourneyGroup[] = [
           description:
             'Azure에 한정되지 않고 AWS에서도 인프라를 직접 설계하고 싶습니다.',
         },
-        liveUrl: 'https://journey-eta-two.vercel.app/#project-antiadhd',
+        liveUrl: 'https://antiadhd-demo.hl620.chatgpt.site',
         repositoryUrl: 'https://github.com/heolyun/AntiADHD',
         architectureUrl: 'https://github.com/heolyun/AntiADHD/blob/main/docs/architecture.md',
         screenshots: [
