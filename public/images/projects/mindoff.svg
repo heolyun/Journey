@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">MindOff product prototype and target AWS architecture</title>
+  <desc id="desc">A life assistant product prototype progressing toward a requirement-driven AWS target architecture.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#101411"/>
+      <stop offset="1" stop-color="#070908"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="70%" cy="30%" r="65%">
+      <stop offset="0" stop-color="#66e3ff" stop-opacity=".2"/>
+      <stop offset="1" stop-color="#66e3ff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="720" rx="36" fill="url(#bg)"/>
+  <rect width="1200" height="720" rx="36" fill="url(#glow)"/>
+  <g fill="none" stroke="#9dffcb" stroke-width="3" opacity=".7">
+    <path d="M350 360h145"/>
+    <path d="M705 360h145"/>
+    <path d="m475 345 20 15-20 15"/>
+    <path d="m830 345 20 15-20 15"/>
+  </g>
+  <g font-family="Arial, sans-serif">
+    <text x="76" y="105" fill="#ffffff" font-size="56" font-weight="700">MindOff</text>
+    <text x="78" y="151" fill="#9dffcb" font-size="23" font-weight="700" letter-spacing="3">TAKE IT OFF YOUR MIND</text>
+    <g>
+      <rect x="72" y="258" width="278" height="204" rx="24" fill="#111713" stroke="#ffffff" stroke-opacity=".16"/>
+      <text x="104" y="307" fill="#9dffcb" font-size="19" font-weight="700">PRODUCT PROTOTYPE</text>
+      <text x="104" y="350" fill="#e4e4e7" font-size="22">Receipts · Pantry</text>
+      <text x="104" y="386" fill="#e4e4e7" font-size="22">Supplies · Need List</text>
+      <text x="104" y="422" fill="#e4e4e7" font-size="22">Subscriptions</text>
+    </g>
+    <g>
+      <rect x="495" y="258" width="210" height="204" rx="24" fill="#11171a" stroke="#66e3ff" stroke-opacity=".35"/>
+      <text x="527" y="307" fill="#66e3ff" font-size="19" font-weight="700">APPLICATION</text>
+      <text x="527" y="356" fill="#e4e4e7" font-size="22">React Native</text>
+      <text x="527" y="392" fill="#e4e4e7" font-size="22">Spring Boot</text>
+      <text x="527" y="428" fill="#e4e4e7" font-size="22">PostgreSQL</text>
+    </g>
+    <g>
+      <rect x="850" y="258" width="278" height="204" rx="24" fill="#17140d" stroke="#ffbf69" stroke-opacity=".45"/>
+      <text x="882" y="307" fill="#ffbf69" font-size="19" font-weight="700">TARGET AWS</text>
+      <text x="882" y="350" fill="#e4e4e7" font-size="22">Managed Services</text>
+      <text x="882" y="386" fill="#e4e4e7" font-size="22">Event Driven</text>
+      <text x="882" y="422" fill="#e4e4e7" font-size="22">Observability</text>
+    </g>
+    <text x="76" y="630" fill="#71717a" font-size="22">Product Prototype · Architecture Design · In Progress</text>
+  </g>
+</svg>

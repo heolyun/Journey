@@ -210,19 +210,19 @@ def page_one(c):
     c.drawString(M + 18, y - 20, "소개")
     c.setFillColor(INK)
     c.setFont("MalgunBold", 12)
-    c.drawString(M + 18, y - 41, "웹 서비스 개발에서 시작해 Azure와 Kubernetes 운영까지 확장했습니다.")
-    draw_text(c, "배포 자동화, 컨테이너 연결, AI 모델 저장 방식과 운영 비용까지 서비스의 전체 생명주기를 책임지는 엔지니어를 목표로 합니다.", M + 18, y - 61, CW - 36, 8.6, 13)
+    c.drawString(M + 18, y - 41, "서비스 전체 구조를 이해하는 클라우드 인프라 엔지니어 지망생입니다.")
+    draw_text(c, "웹 개발을 기반으로 Azure·AKS와 온프레미스 k3s 운영을 거쳐, MindOff에서 요구사항 중심의 AWS 설계로 확장하고 있습니다.", M + 18, y - 61, CW - 36, 8.6, 13)
     y -= 107
 
     y = section(c, "프로젝트에 적용한 핵심 역량", y)
-    y = skill_row(c, y, "인프라·운영", ["Azure", "AKS", "Kubernetes", "Docker", "GitHub Actions", "Linux"])
+    y = skill_row(c, y, "인프라·운영", ["Azure", "AKS", "k3s", "Docker", "GitHub Actions", "Prometheus"])
     y = skill_row(c, y, "웹 개발", ["Java", "Spring", "Spring Security", "React", "JavaScript", "REST API"])
     y = skill_row(c, y, "데이터·AI", ["Oracle", "PostgreSQL", "MyBatis", "Python", "AI API"])
     y -= 18
 
     y = section(c, "주요 프로젝트", y)
     y = project_card(c, y, "Burinake", "클라우드 · DevOps · AI 인프라", "화재 감지와 신고 자동화 AI 서비스를 Azure에서 컨테이너 기반으로 배포·운영했습니다.", ["GitHub Actions에서 이미지를 빌드해 ACR로 배포하고, AKS가 이미지를 가져오도록 CI/CD를 분리했습니다.", "YOLO 모델을 Blob Storage와 initContainer로 분리해 이미지 비대화와 VM 디스크 부족 문제를 개선했습니다.", "프론트엔드·백엔드·PostgreSQL·YOLO·VLM을 AKS에 연결하고 Secret, ConfigMap, Ingress, HPA를 구성했습니다."], ["Azure", "AKS", "Docker", "CI/CD", "YOLO / VLM"], 158)
-    project_card(c, y, "CSAS", "프론트엔드", "AI 기반 건물 균열 분석 서비스의 모바일 촬영·업로드와 분석 결과 화면을 구현했습니다.", ["업로드 전 이미지 압축과 오류 안내로 고해상도 모바일 사진의 413 오류를 줄였습니다.", "균열 좌표·유형 필터, 원본/분석 이미지 비교와 상세 모달을 개선했습니다."], ["React", "Vite", "Axios", "AI API"], 123)
+    project_card(c, y, "AntiADHD", "개인 · 모바일 · 온프레미스 Kubernetes · 진행 중", "React Native 생산성 앱과 Spring Boot API를 개발하고, 단일 노드 k3s에서 직접 운영하고 있습니다.", ["JWT·Refresh Token 인증과 일정·루틴·목표·Focus·Daily Review, AI 비동기 작업을 구현했습니다.", "Traefik, Kustomize, Probe, GHCR, Prometheus·Grafana와 PostgreSQL 백업·복구 흐름을 구성했습니다."], ["React Native", "Spring", "k3s", "GHCR", "Prometheus"], 123)
     footer(c, 1)
 
 
@@ -253,16 +253,16 @@ def page_two(c):
 
 def page_three(c):
     y = H - 21 * mm
-    y = section(c, "프로젝트 경험", y)
+    y = section(c, "현재 프로젝트", y)
+    y = project_card(c, y, "MindOff", "개인 · 제품 프로토타입 · AWS 설계 · 진행 중", "반복되는 생활 정보를 최소 입력으로 대신 기억하고 알려주는 모바일 생활비서를 기획·개발하고 있습니다.", ["영수증, 냉장고 유통기한, 생활용품, Need List와 구독 관리 흐름을 제품 프로토타입으로 구현했습니다.", "AntiADHD의 온프레미스 운영 회고를 바탕으로 상시 API와 이벤트성 작업을 분리한 AWS Target Architecture를 설계 중입니다."], ["React Native", "Spring", "PostgreSQL", "AWS 설계"], 123)
+    y -= 14
+    y = section(c, "보조 프로젝트", y)
     gap = 8
     third = (CW - gap * 2) / 3
     small_project(c, M, y, third, "DoctorLink", "사용자 인증 상태와 건강 기록 흐름을 연결한 React 서비스", ["React", "Context"])
-    small_project(c, M + third + gap, y, third, "#Trip", "OAuth2와 SMTP 계정 복구를 포함한 여행 서비스 백엔드", ["Spring", "OAuth2"])
-    small_project(c, M + (third + gap) * 2, y, third, "오늘Farm", "시세·상품·AI 식단을 통합하고 배포까지 수행한 서비스", ["Spring", "AI API"])
+    small_project(c, M + third + gap, y, third, "오늘Farm", "시세·상품·AI 식단을 통합하고 배포까지 수행한 서비스", ["Spring", "AI API"])
+    small_project(c, M + (third + gap) * 2, y, third, "CSAS", "모바일 촬영 이미지를 분석하는 건물 균열 탐지 서비스", ["React", "AI API"])
     y -= 112
-    small_project(c, M, y, (CW - gap) / 2, "TeamRullet", "조건 검증과 점수 편차를 반영한 팀 밸런싱 서비스", ["TypeScript", "Netlify"])
-    small_project(c, M + (CW - gap) / 2 + gap, y, (CW - gap) / 2, "CHAMBTI", "응답 가중치를 바탕으로 게임 캐릭터를 추천하는 서비스", ["React", "Netlify"])
-    y -= 118
 
     y = section(c, "학력 및 자격 준비", y)
     c.setFillColor(PALE)
@@ -271,10 +271,10 @@ def page_three(c):
     c.setFont("MalgunBold", 9.5)
     c.drawString(M + 16, y - 21, "충남도립대학교 · 호텔조리학과")
     c.setFont("MalgunBold", 9)
-    c.drawString(M + 16, y - 47, "리눅스마스터 2급")
+    c.drawString(M + 16, y - 47, "AWS SAA")
     c.setFillColor(MUTED)
     c.setFont("Malgun", 8)
-    c.drawString(M + 110, y - 47, "2026.08.01 시험 예정")
+    c.drawString(M + 110, y - 47, "2026.09.09 시험 예정")
     c.setFillColor(INK)
     c.setFont("MalgunBold", 9)
     c.drawString(M + 16, y - 67, "정보처리기능사")
@@ -287,12 +287,6 @@ def page_three(c):
     c.setFillColor(MUTED)
     c.setFont("Malgun", 8)
     c.drawString(M + 110, y - 87, "시험 준비 중")
-    c.setFillColor(INK)
-    c.setFont("MalgunBold", 9)
-    c.drawString(M + 260, y - 87, "AWS SAA")
-    c.setFillColor(MUTED)
-    c.setFont("Malgun", 8)
-    c.drawString(M + 325, y - 87, "자격증 준비 중")
     y -= 132
 
     y = section(c, "경험과 강점", y)
